@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
@@ -36,7 +35,9 @@ const Navbar = () => {
     <header 
       className={cn(
         'fixed top-0 left-0 w-full z-50 transition-all duration-300 py-6',
-        scrolled ? 'bg-background/90 backdrop-blur-md py-4 shadow-md' : 'bg-transparent'
+        scrolled 
+          ? 'bg-background/90 backdrop-blur-md py-4 shadow-md' 
+          : 'bg-dark/50 backdrop-blur-sm'
       )}
     >
       <div className="container-padding mx-auto flex justify-between items-center">
@@ -54,7 +55,7 @@ const Navbar = () => {
               to={item.path}
               className={({ isActive }) => cn(
                 'text-sm font-medium tracking-wide uppercase transition-colors hover:text-gold relative pb-1',
-                isActive ? 'text-gold' : 'text-foreground'
+                isActive ? 'text-gold' : scrolled ? 'text-foreground' : 'text-white'
               )}
             >
               {item.name}
@@ -75,7 +76,10 @@ const Navbar = () => {
         {/* Mobile Menu Toggle */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="lg:hidden text-foreground hover:text-gold transition-colors"
+          className={cn(
+            "lg:hidden transition-colors",
+            scrolled ? "text-foreground hover:text-gold" : "text-white hover:text-gold"
+          )}
           aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
         >
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}

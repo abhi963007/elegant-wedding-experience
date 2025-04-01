@@ -73,8 +73,8 @@ const AboutSection = () => {
               </div>
               <div className="overflow-hidden rounded-md shadow-md">
                 <img 
-                  src="https://images.pexels.com/photos/3536235/pexels-photo-3536235.jpeg?auto=compress&cs=tinysrgb&w=600" 
-                  alt="Wedding rings" 
+                  src="https://images.pexels.com/photos/1488312/pexels-photo-1488312.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                  alt="Wedding couple dancing" 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 />
               </div>
