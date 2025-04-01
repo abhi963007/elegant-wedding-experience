@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
@@ -10,6 +11,10 @@ const Pricing = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Pricing & Packages | Vynora Wedding Company</title>
+        <meta name="description" content="Explore our wedding cinematography packages and pricing options to find the perfect match for your special day." />
+      </Helmet>
       <Navbar />
       
       {/* Hero Section */}
