@@ -1,6 +1,6 @@
-
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
 import VideoHero from '../components/VideoHero';
 import AboutSection from '../components/AboutSection';
@@ -20,6 +20,10 @@ const Index = () => {
       transition={{ duration: 0.5 }}
       className="min-h-screen"
     >
+      <Helmet>
+        <title>Vynora Wedding Company | Premium Wedding Cinematography</title>
+        <meta name="description" content="Premium wedding cinematography and video editing that transforms your special moments into cinematic masterpieces." />
+      </Helmet>
       <Navbar />
       <VideoHero />
       <AboutSection />
