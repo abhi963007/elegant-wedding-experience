@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -42,7 +41,7 @@ const VideoHero = () => {
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
       >
-        <source src="https://assets.mixkit.co/videos/preview/mixkit-elegant-wedding-day-17832-large.mp4" type="video/mp4" />
+        <source src="/assets/videos/backgorund-video.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       

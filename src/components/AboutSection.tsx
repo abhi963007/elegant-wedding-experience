@@ -50,14 +50,14 @@ const AboutSection = () => {
             <div className="space-y-4">
               <div className="overflow-hidden rounded-md shadow-md">
                 <img 
-                  src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" 
+                  src="https://images.pexels.com/photos/2253870/pexels-photo-2253870.jpeg?auto=compress&cs=tinysrgb&w=600" 
                   alt="Wedding couple" 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 />
               </div>
               <div className="overflow-hidden rounded-md shadow-md">
                 <img 
-                  src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" 
+                  src="https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg?auto=compress&cs=tinysrgb&w=600" 
                   alt="Wedding ceremony" 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 />
@@ -66,14 +66,14 @@ const AboutSection = () => {
             <div className="space-y-4 mt-6">
               <div className="overflow-hidden rounded-md shadow-md">
                 <img 
-                  src="https://images.unsplash.com/photo-1511795409834-c70f1b20017b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" 
+                  src="https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&w=600" 
                   alt="Wedding details" 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 />
               </div>
               <div className="overflow-hidden rounded-md shadow-md">
                 <img 
-                  src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" 
+                  src="https://images.pexels.com/photos/3536235/pexels-photo-3536235.jpeg?auto=compress&cs=tinysrgb&w=600" 
                   alt="Wedding rings" 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 />
