@@ -6,6 +6,7 @@ import VideoHero from '../components/VideoHero';
 import AboutSection from '../components/AboutSection';
 import FeaturedWorkSection from '../components/FeaturedWorkSection';
 import TestimonialsSection from '../components/TestimonialsSection';
+import WeddingVideoSection from '../components/WeddingVideoSection';
 import Footer from '../components/Footer';
 
 const Index = () => {
@@ -29,6 +30,7 @@ const Index = () => {
       <AboutSection />
       <FeaturedWorkSection />
       <TestimonialsSection />
+      <WeddingVideoSection />
       <Footer />
     </motion.div>
   );

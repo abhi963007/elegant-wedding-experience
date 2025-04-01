@@ -1,59 +1,84 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 
 const AboutSection = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.2,
-  });
-
   return (
-    <section ref={ref} className="section-padding bg-background">
+    <section className="py-20 px-6 md:px-12 lg:px-24 bg-white">
       <div className="container mx-auto">
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: inView ? 1 : 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-4xl font-heading mb-4">Our <span className="gold-gradient">Story</span></h2>
-          <div className="h-0.5 w-20 bg-gold mx-auto"></div>
-        </motion.div>
-
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : -30 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative"
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="space-y-6"
           >
-            <div className="aspect-video rounded-sm overflow-hidden">
-              <img 
-                src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" 
-                alt="Vynora team filming a wedding" 
-                className="w-full h-full object-cover"
-              />
+            <h2 className="text-3xl md:text-4xl font-heading">Cinematic Wedding <span className="gold-gradient">Films</span> That Tell Your Story</h2>
+            <div className="w-20 h-1 bg-gold"></div>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              At Vynora Wedding Company, we believe that your wedding film should be as unique as your love story. Our team of skilled cinematographers and editors work tirelessly to create a cinematic experience that captures the emotions, details, and magic of your special day.
+            </p>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              From tender moments to grand celebrations, we document your wedding day with an artistic eye and technical excellence, crafting a timeless keepsake you'll treasure for generations.
+            </p>
+            <div className="pt-6">
+              <a 
+                href="/portfolio" 
+                className="inline-flex items-center group transition-all duration-300 font-medium text-gold hover:text-gold-dark"
+              >
+                View Our Work
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  className="h-5 w-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
             </div>
-            <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-gold/20 -z-10"></div>
           </motion.div>
-
+          
           <motion.div
             initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : 30 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-2 gap-4"
           >
-            <h3 className="text-2xl md:text-3xl font-heading mb-6">Passionate about <span className="gold-gradient">Preserving Memories</span></h3>
-            <p className="text-muted-foreground mb-6">
-              At Vynora, we believe that every moment deserves to be captured with artistry and emotion. Founded in 2015, our team of passionate cinematographers and editors has been dedicated to transforming ordinary footage into extraordinary memories.
-            </p>
-            <p className="text-muted-foreground mb-6">
-              We specialize in capturing the essence of your special day, from the nervous anticipation to the joyful celebration, creating a timeless keepsake that you'll treasure for generations.
-            </p>
-            <p className="text-muted-foreground">
-              With our meticulous attention to detail and cinematic approach, we craft videos that don't just document events but tell compelling stories that resonate with emotion and authenticity.
-            </p>
+            <div className="space-y-4">
+              <div className="overflow-hidden rounded-md shadow-md">
+                <img 
+                  src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" 
+                  alt="Wedding couple" 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+              <div className="overflow-hidden rounded-md shadow-md">
+                <img 
+                  src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" 
+                  alt="Wedding ceremony" 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+            </div>
+            <div className="space-y-4 mt-6">
+              <div className="overflow-hidden rounded-md shadow-md">
+                <img 
+                  src="https://images.unsplash.com/photo-1511795409834-c70f1b20017b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" 
+                  alt="Wedding details" 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+              <div className="overflow-hidden rounded-md shadow-md">
+                <img 
+                  src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" 
+                  alt="Wedding rings" 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>
