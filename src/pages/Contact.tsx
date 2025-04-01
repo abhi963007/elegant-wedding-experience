@@ -284,7 +284,7 @@ const Contact = () => {
               ></iframe>
             </div>
           </motion.div>
-        </div>
+      </div>
       </section>
       
       <Footer />
