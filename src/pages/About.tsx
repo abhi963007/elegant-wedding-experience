@@ -10,7 +10,12 @@ const About = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="min-h-screen bg-background"
+    >
       <Helmet>
         <title>About Us | Vynora Wedding Company</title>
         <meta name="description" content="Learn about Vynora Wedding Company - passionate storytellers dedicated to capturing the most beautiful moments of your wedding day." />
@@ -26,8 +31,8 @@ const About = () => {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-5xl font-heading mb-6 text-white">About <span className="gold-gradient">Vynora</span></h1>
-            <p className="text-lg text-white/80 max-w-3xl mx-auto">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading mb-6 text-white">About <span className="gold-gradient">Vynora</span></h1>
+            <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto font-heading tracking-wider">
               We are passionate storytellers dedicated to capturing the most beautiful moments of your wedding day.
             </p>
           </motion.div>
@@ -44,9 +49,9 @@ const About = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <div className="aspect-video rounded-md overflow-hidden">
+              <div className="aspect-video rounded-md overflow-hidden shadow-md">
                 <img 
-                  src="https://images.unsplash.com/photo-1607190074257-dd4b7af0309f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                  src="https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
                   alt="Wedding filmmakers at work" 
                   className="w-full h-full object-cover"
                 />
@@ -97,22 +102,22 @@ const About = () => {
               {
                 name: "Emily Chen",
                 role: "Founder & Lead Cinematographer",
-                image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                image: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               },
               {
                 name: "Marcus Johnson",
                 role: "Senior Editor",
-                image: "https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               },
               {
                 name: "Sophia Rodriguez",
                 role: "Cinematographer",
-                image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               },
               {
                 name: "David Kim",
                 role: "Drone Specialist & Cinematographer",
-                image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                image: "https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               }
             ].map((member, index) => (
               <motion.div
@@ -123,14 +128,14 @@ const About = () => {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="overflow-hidden rounded-md mb-4 aspect-square">
+                <div className="overflow-hidden rounded-md mb-4 aspect-square shadow-md">
                   <img 
                     src={member.image} 
                     alt={member.name} 
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                   />
                 </div>
-                <h3 className="font-medium text-lg">{member.name}</h3>
+                <h3 className="font-medium text-lg font-heading">{member.name}</h3>
                 <p className="text-sm text-muted-foreground">{member.role}</p>
               </motion.div>
             ))}
@@ -177,7 +182,7 @@ const About = () => {
                 viewport={{ once: true }}
                 className="border border-gold/20 p-8 rounded-md hover:shadow-md transition-all duration-300"
               >
-                <h3 className="text-xl font-medium mb-4">{value.title}</h3>
+                <h3 className="text-xl font-heading font-medium mb-4">{value.title}</h3>
                 <p className="text-muted-foreground">{value.description}</p>
               </motion.div>
             ))}
@@ -185,8 +190,32 @@ const About = () => {
         </div>
       </section>
       
+      {/* CTA Section */}
+      <section className="py-16 px-6 md:px-12 lg:px-24 bg-dark text-white">
+        <div className="container mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="max-w-3xl mx-auto"
+          >
+            <h2 className="text-3xl font-heading mb-6">Ready to Capture Your Special Day?</h2>
+            <p className="mb-8 text-white/80 font-heading tracking-wider">
+              Let's discuss how we can create a beautiful wedding film that you'll cherish forever.
+            </p>
+            <a 
+              href="/contact" 
+              className="bg-gold hover:bg-gold-dark text-white py-3 px-8 rounded-full transition-all duration-300 text-sm font-medium tracking-wider shadow-md hover:shadow-lg hover:scale-105 transform hover:translate-y-[-2px] border border-gold/20"
+            >
+              Book a Consultation
+            </a>
+          </motion.div>
+        </div>
+      </section>
+      
       <Footer />
-    </div>
+    </motion.div>
   );
 };
 

@@ -25,7 +25,7 @@ const Portfolio = () => {
       title: "Emma & James",
       location: "Malibu, California",
       category: "beach",
-      thumbnail: "https://images.pexels.com/photos/1244396/pexels-photo-1244396.jpeg?auto=compress&cs=tinysrgb&w=1000",
+      thumbnail: "https://images.pexels.com/photos/1244396/pexels-photo-1244396.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
     },
     {
@@ -33,7 +33,7 @@ const Portfolio = () => {
       title: "Sofia & Michael",
       location: "Tuscany, Italy",
       category: "destination",
-      thumbnail: "https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&cs=tinysrgb&w=1000",
+      thumbnail: "https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
     },
     {
@@ -41,7 +41,7 @@ const Portfolio = () => {
       title: "Alexandra & William",
       location: "Beverly Hills, California",
       category: "estate",
-      thumbnail: "https://images.pexels.com/photos/3014860/pexels-photo-3014860.jpeg?auto=compress&cs=tinysrgb&w=1000",
+      thumbnail: "https://images.pexels.com/photos/3014860/pexels-photo-3014860.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
     },
     {
@@ -49,35 +49,77 @@ const Portfolio = () => {
       title: "Jessica & Robert",
       location: "New York, New York",
       category: "traditional",
-      thumbnail: "https://images.pexels.com/photos/1456613/pexels-photo-1456613.jpeg?auto=compress&cs=tinysrgb&w=1000",
+      thumbnail: "https://images.pexels.com/photos/1456613/pexels-photo-1456613.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
     },
     {
       id: 5,
-      title: "Olivia & Ethan",
-      location: "Maui, Hawaii",
+      title: "Olivia & Noah",
+      location: "Santa Barbara, California",
       category: "beach",
-      thumbnail: "https://images.pexels.com/photos/2959192/pexels-photo-2959192.jpeg?auto=compress&cs=tinysrgb&w=1000",
+      thumbnail: "https://images.pexels.com/photos/169198/pexels-photo-169198.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
     },
     {
       id: 6,
-      title: "Isabella & Thomas",
-      location: "Santorini, Greece",
+      title: "Ava & Liam",
+      location: "Lake Como, Italy",
       category: "destination",
-      thumbnail: "https://images.pexels.com/photos/169198/pexels-photo-169198.jpeg?auto=compress&cs=tinysrgb&w=1000",
+      thumbnail: "https://images.pexels.com/photos/1247292/pexels-photo-1247292.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+    },
+    {
+      id: 7,
+      title: "Charlotte & Ethan",
+      location: "Napa Valley, California",
+      category: "estate",
+      thumbnail: "https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+    },
+    {
+      id: 8,
+      title: "Mia & Benjamin",
+      location: "Boston, Massachusetts",
+      category: "traditional",
+      thumbnail: "https://images.pexels.com/photos/1540406/pexels-photo-1540406.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+    },
+    {
+      id: 9,
+      title: "Amelia & Lucas",
+      location: "Newport Beach, California",
+      category: "beach",
+      thumbnail: "https://images.pexels.com/photos/1540411/pexels-photo-1540411.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
     }
   ];
 
-  const filteredItems = selectedCategory === 'all' 
-    ? portfolioItems 
+  const filteredItems = selectedCategory === 'all'
+    ? portfolioItems
     : portfolioItems.filter(item => item.category === selectedCategory);
 
-  const [selectedItem, setSelectedItem] = useState(null);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [activeVideo, setActiveVideo] = useState('');
+
+  const openModal = (videoUrl) => {
+    setActiveVideo(videoUrl);
+    setModalOpen(true);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+    setActiveVideo('');
+    document.body.style.overflow = 'auto';
+  };
 
   return (
-    <div className="min-h-screen bg-background">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="min-h-screen bg-background"
+    >
       <Helmet>
         <title>Portfolio | Vynora Wedding Company</title>
         <meta name="description" content="View our showcase of beautiful wedding films and cinematic stories from weddings around the world." />
@@ -93,8 +135,8 @@ const Portfolio = () => {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-5xl font-heading mb-6 text-white">Our <span className="gold-gradient">Portfolio</span></h1>
-            <p className="text-lg text-white/80 max-w-3xl mx-auto">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading mb-6 text-white">Our <span className="gold-gradient">Portfolio</span></h1>
+            <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto font-heading tracking-wider">
               A showcase of our most beautiful wedding films and cinematic stories.
             </p>
           </motion.div>
@@ -111,7 +153,7 @@ const Portfolio = () => {
                 onClick={() => setSelectedCategory(category.id)}
                 className={`px-6 py-2 rounded-full text-sm transition-all duration-300 ${
                   selectedCategory === category.id
-                    ? 'bg-gold text-white'
+                    ? 'bg-gold text-white shadow-md'
                     : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
                 }`}
               >
@@ -123,7 +165,7 @@ const Portfolio = () => {
       </section>
       
       {/* Portfolio Grid */}
-      <section className="py-8 px-6 md:px-12 lg:px-24">
+      <section className="py-12 px-6 md:px-12 lg:px-24">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredItems.map((item, index) => (
@@ -131,93 +173,39 @@ const Portfolio = () => {
                 key={item.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 * index }}
+                transition={{ duration: 0.5, delay: 0.1 * (index % 3) }}
                 viewport={{ once: true }}
-                className="group cursor-pointer"
-                onClick={() => setSelectedItem(item)}
+                className="rounded-md overflow-hidden shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <div className="aspect-video rounded-md overflow-hidden relative">
+                <div className="relative group aspect-video overflow-hidden cursor-pointer" onClick={() => openModal(item.videoUrl)}>
                   <img 
                     src={item.thumbnail} 
-                    alt={item.title} 
+                    alt={`${item.title} wedding`} 
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
-                    <div className="w-16 h-16 rounded-full bg-gold bg-opacity-80 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="w-16 h-16 rounded-full bg-gold/80 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
                   </div>
                 </div>
-                <div className="mt-4">
-                  <h3 className="text-lg font-medium">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground">{item.location}</p>
+                <div className="p-6 bg-white">
+                  <h3 className="text-xl font-heading font-medium mb-2">{item.title}</h3>
+                  <p className="text-muted-foreground mb-4">{item.location}</p>
+                  <button 
+                    onClick={() => openModal(item.videoUrl)}
+                    className="text-gold font-medium text-sm inline-flex items-center group"
+                  >
+                    Watch Film
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
                 </div>
               </motion.div>
             ))}
-          </div>
-        </div>
-      </section>
-      
-      {/* Featured Film Section */}
-      <section className="py-16 px-6 md:px-12 lg:px-24 bg-slate-50">
-        <div className="container mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl font-heading mb-6">Featured Film</h2>
-            <p className="text-muted-foreground max-w-3xl mx-auto">
-              One of our most memorable wedding films that showcases our cinematic approach.
-            </p>
-          </motion.div>
-          
-          <div className="aspect-video rounded-md overflow-hidden shadow-lg">
-            <iframe
-              className="w-full h-full"
-              src="https://www.youtube.com/embed/c_KOydDwX-g"
-              title="Featured Wedding Film"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
-          
-          <div className="mt-6 text-center">
-            <h3 className="text-xl font-medium">Charlotte & Benjamin</h3>
-            <p className="text-muted-foreground">Chateau Lake Louise, Canada</p>
-          </div>
-        </div>
-      </section>
-      
-      {/* Testimonial */}
-      <section className="py-16 px-6 md:px-12 lg:px-24">
-        <div className="container mx-auto">
-          <div className="max-w-4xl mx-auto text-center">
-            <svg className="w-12 h-12 text-gold mx-auto mb-6" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-              <path d="M13 14.725c0-5.141 3.892-10.519 10-11.725l.984 2.126c-2.215.835-4.163 3.742-4.38 5.746 2.491.392 4.396 2.547 4.396 5.149 0 3.182-2.584 4.979-5.199 4.979-3.015 0-5.801-2.305-5.801-6.275zm-13 0c0-5.141 3.892-10.519 10-11.725l.984 2.126c-2.215.835-4.163 3.742-4.38 5.746 2.491.392 4.396 2.547 4.396 5.149 0 3.182-2.584 4.979-5.199 4.979-3.015 0-5.801-2.305-5.801-6.275z" />
-            </svg>
-            <blockquote className="text-xl md:text-2xl italic text-slate-700 mb-6">
-              "Vynora's team captured our wedding day in a way that exceeded all expectations. The film they created brings tears to our eyes every time we watch it, allowing us to relive those precious moments over and over again."
-            </blockquote>
-            <div className="flex items-center justify-center">
-              <div className="w-12 h-12 rounded-full overflow-hidden mr-3">
-                <img 
-                  src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" 
-                  alt="Charlotte" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="text-left">
-                <p className="font-medium">Charlotte W.</p>
-                <p className="text-sm text-muted-foreground">Chateau Lake Louise, Canada</p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -233,53 +221,51 @@ const Portfolio = () => {
             className="max-w-3xl mx-auto"
           >
             <h2 className="text-3xl font-heading mb-6">Ready to Create Your Own Wedding Story?</h2>
-            <p className="mb-8 text-white/80">
+            <p className="mb-8 text-white/80 font-heading tracking-wider">
               Let's discuss how we can capture your special day in a cinematic film.
             </p>
             <a 
               href="/contact" 
-              className="inline-block bg-gold hover:bg-gold-dark text-white py-3 px-8 rounded-sm transition-all duration-300 text-sm font-medium tracking-wider"
+              className="bg-gold hover:bg-gold-dark text-white py-3 px-8 rounded-full transition-all duration-300 text-sm font-medium tracking-wider shadow-md hover:shadow-lg hover:scale-105 transform hover:translate-y-[-2px] border border-gold/20"
             >
-              Contact Us
+              Book a Consultation
             </a>
           </motion.div>
         </div>
       </section>
       
       {/* Video Modal */}
-      {selectedItem && (
-        <div className="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center p-4">
-          <div className="w-full max-w-5xl">
-            <div className="relative">
-              <button 
-                onClick={() => setSelectedItem(null)}
-                className="absolute -top-12 right-0 text-white hover:text-gold transition-colors duration-300"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-              <div className="aspect-video rounded-md overflow-hidden">
-                <iframe
-                  className="w-full h-full"
-                  src={selectedItem.videoUrl}
-                  title={selectedItem.title}
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </div>
-              <div className="mt-4 text-white">
-                <h3 className="text-xl font-medium">{selectedItem.title}</h3>
-                <p className="text-white/70">{selectedItem.location}</p>
-              </div>
-            </div>
-          </div>
+      {modalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80" onClick={closeModal}>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.3 }}
+            className="w-full max-w-5xl aspect-video relative"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="absolute -top-10 right-0 text-white hover:text-gold transition-colors"
+              onClick={closeModal}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            <iframe
+              src={activeVideo}
+              title="Wedding Video"
+              className="w-full h-full"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </motion.div>
         </div>
       )}
       
       <Footer />
-    </div>
+    </motion.div>
   );
 };
 

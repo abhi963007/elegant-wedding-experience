@@ -10,7 +10,12 @@ const Services = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="min-h-screen bg-background"
+    >
       <Helmet>
         <title>Our Services | Vynora Wedding Company</title>
         <meta name="description" content="Explore our premium wedding cinematography services including cinematic wedding films, drone coverage, and same-day edits." />
@@ -26,8 +31,8 @@ const Services = () => {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-5xl font-heading mb-6 text-white">Our <span className="gold-gradient">Services</span></h1>
-            <p className="text-lg text-white/80 max-w-3xl mx-auto">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading mb-6 text-white">Our <span className="gold-gradient">Services</span></h1>
+            <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto font-heading tracking-wider">
               Cinematic storytelling that preserves your wedding memories for a lifetime.
             </p>
           </motion.div>
@@ -42,32 +47,32 @@ const Services = () => {
               {
                 title: "Cinematic Wedding Films",
                 description: "Our signature full-day coverage includes a beautifully crafted 5-10 minute cinematic highlight film that tells the story of your wedding day.",
-                image: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                image: "https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               },
               {
                 title: "Documentary Edit",
                 description: "A longer 30-60 minute documentary-style edit that includes more moments, speeches, and interactions from your special day.",
-                image: "https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                image: "https://images.pexels.com/photos/1444438/pexels-photo-1444438.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               },
               {
                 title: "Same-Day Edit",
                 description: "A short film of your ceremony and preparations, edited during your reception and displayed for your guests on the same day.",
-                image: "https://images.unsplash.com/photo-1537633552985-df8429e8048b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                image: "https://images.pexels.com/photos/1540408/pexels-photo-1540408.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               },
               {
                 title: "Drone Aerial Coverage",
                 description: "Breathtaking aerial shots of your venue and surroundings, adding a cinematic perspective to your wedding film.",
-                image: "https://images.unsplash.com/photo-1527979888946-d922fc0f8ce1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                image: "https://images.pexels.com/photos/2253894/pexels-photo-2253894.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               },
               {
                 title: "Engagement Sessions",
                 description: "Capture your love story before the wedding with a beautifully filmed engagement video at a location of your choice.",
-                image: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                image: "https://images.pexels.com/photos/1247201/pexels-photo-1247201.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               },
               {
                 title: "Raw Footage Archive",
                 description: "All the unedited footage from your wedding day, archived and delivered for your personal collection.",
-                image: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                image: "https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               }
             ].map((service, index) => (
               <motion.div
@@ -86,7 +91,7 @@ const Services = () => {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-medium mb-3">{service.title}</h3>
+                  <h3 className="text-xl font-heading font-medium mb-3">{service.title}</h3>
                   <p className="text-muted-foreground">{service.description}</p>
                 </div>
               </motion.div>
@@ -145,7 +150,7 @@ const Services = () => {
                 <div className="w-16 h-16 bg-gold text-white rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-heading">
                   {process.step}
                 </div>
-                <h3 className="text-xl font-medium mb-3">{process.title}</h3>
+                <h3 className="text-xl font-heading font-medium mb-3">{process.title}</h3>
                 <p className="text-muted-foreground">{process.description}</p>
               </motion.div>
             ))}
@@ -183,9 +188,9 @@ const Services = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <div className="aspect-video rounded-md overflow-hidden">
+              <div className="aspect-video rounded-md overflow-hidden shadow-md">
                 <img 
-                  src="https://images.unsplash.com/photo-1582574501002-9c79034aac7d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                  src="https://images.pexels.com/photos/2608519/pexels-photo-2608519.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
                   alt="Professional camera equipment" 
                   className="w-full h-full object-cover"
                 />
@@ -206,12 +211,12 @@ const Services = () => {
             className="max-w-3xl mx-auto"
           >
             <h2 className="text-3xl font-heading mb-6">Ready to Capture Your Special Day?</h2>
-            <p className="mb-8 text-white/80">
+            <p className="mb-8 text-white/80 font-heading tracking-wider">
               Let's discuss how we can create a beautiful wedding film that you'll cherish forever.
             </p>
             <a 
               href="/contact" 
-              className="inline-block bg-gold hover:bg-gold-dark text-white py-3 px-8 rounded-sm transition-all duration-300 text-sm font-medium tracking-wider"
+              className="bg-gold hover:bg-gold-dark text-white py-3 px-8 rounded-full transition-all duration-300 text-sm font-medium tracking-wider shadow-md hover:shadow-lg hover:scale-105 transform hover:translate-y-[-2px] border border-gold/20"
             >
               Book a Consultation
             </a>
@@ -220,7 +225,7 @@ const Services = () => {
       </section>
       
       <Footer />
-    </div>
+    </motion.div>
   );
 };
 

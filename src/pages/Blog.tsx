@@ -12,76 +12,92 @@ const Blog = () => {
   const [activeCategory, setActiveCategory] = useState('all');
 
   const categories = [
-    { id: 'all', name: 'All Posts' },
+    { id: 'all', name: 'All Articles' },
     { id: 'tips', name: 'Wedding Tips' },
-    { id: 'inspiration', name: 'Inspiration' },
-    { id: 'behind', name: 'Behind the Scenes' },
-    { id: 'stories', name: 'Client Stories' }
+    { id: 'planning', name: 'Planning' },
+    { id: 'cinematography', name: 'Cinematography' },
+    { id: 'trends', name: 'Wedding Trends' }
   ];
 
   const blogPosts = [
     {
       id: 1,
-      title: "10 Must-Have Shots for Your Wedding Film",
+      title: "10 Tips for Planning Your Wedding Film",
+      excerpt: "Discover the essential tips for capturing the perfect wedding video that you'll cherish for years to come.",
       category: "tips",
-      date: "April 15, 2023",
-      excerpt: "From getting ready moments to the first dance, discover the essential shots that will make your wedding film truly memorable.",
-      image: "https://images.pexels.com/photos/1244396/pexels-photo-1244396.jpeg?auto=compress&cs=tinysrgb&w=1000",
-      author: "Emily Chen"
+      date: "May 15, 2023",
+      image: "https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      author: {
+        name: "Emily Chen",
+        role: "Founder & Lead Cinematographer",
+        image: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+      }
     },
     {
       id: 2,
-      title: "How to Choose the Perfect Wedding Venue for Filming",
-      category: "tips",
-      date: "March 22, 2023",
-      excerpt: "Lighting, acoustics, backdrop—all things to consider when selecting a venue that will translate beautifully on film.",
-      image: "https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&cs=tinysrgb&w=1000",
-      author: "David Kim"
+      title: "Why Golden Hour is Perfect for Wedding Photos",
+      excerpt: "Learn why photographers and cinematographers love golden hour, and how to plan your wedding to take advantage of this magical light.",
+      category: "cinematography",
+      date: "April 28, 2023",
+      image: "https://images.pexels.com/photos/1247292/pexels-photo-1247292.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      author: {
+        name: "David Kim",
+        role: "Drone Specialist & Cinematographer",
+        image: "https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+      }
     },
     {
       id: 3,
-      title: "Sarah & Mark's Sunset Beach Wedding",
-      category: "stories",
-      date: "February 14, 2023",
-      excerpt: "A breathtaking celebration on the shores of Malibu, featuring emotional vows and spectacular golden hour footage.",
-      image: "https://images.pexels.com/photos/169198/pexels-photo-169198.jpeg?auto=compress&cs=tinysrgb&w=1000",
-      author: "Sophia Rodriguez"
+      title: "Wedding Cinematography Trends for 2023",
+      excerpt: "Stay ahead of the curve with these emerging trends in wedding videography that are making waves this year.",
+      category: "trends",
+      date: "March 10, 2023",
+      image: "https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      author: {
+        name: "Sophia Rodriguez",
+        role: "Cinematographer",
+        image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+      }
     },
     {
       id: 4,
-      title: "The Evolution of Wedding Cinematography",
-      category: "inspiration",
-      date: "January 30, 2023",
-      excerpt: "From shaky handheld camcorders to cinematic masterpieces—how wedding films have transformed over the decades.",
-      image: "https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&w=1000",
-      author: "Marcus Johnson"
+      title: "How to Choose the Perfect Wedding Venue for Filming",
+      excerpt: "Your venue choice greatly impacts your wedding film. Here's what to consider from a cinematographer's perspective.",
+      category: "planning",
+      date: "February 5, 2023",
+      image: "https://images.pexels.com/photos/1456613/pexels-photo-1456613.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      author: {
+        name: "Marcus Johnson",
+        role: "Senior Editor",
+        image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+      }
     },
     {
       id: 5,
-      title: "Setting Up the Perfect Wedding Day Timeline for Videography",
-      category: "tips",
-      date: "December 10, 2022",
-      excerpt: "How to structure your wedding day schedule to ensure we capture all the important moments in the best light possible.",
-      image: "https://images.pexels.com/photos/2959192/pexels-photo-2959192.jpeg?auto=compress&cs=tinysrgb&w=1000",
-      author: "Emily Chen"
-    },
-    {
-      id: 6,
-      title: "A Day in the Life: Behind the Scenes of a Wedding Shoot",
-      category: "behind",
-      date: "November 5, 2022",
-      excerpt: "What does it take to film a wedding? Follow our team from sunrise preparations to the last dance.",
-      image: "https://images.pexels.com/photos/1456613/pexels-photo-1456613.jpeg?auto=compress&cs=tinysrgb&w=1000",
-      author: "David Kim"
+      title: "The Art of Storytelling in Wedding Films",
+      excerpt: "Discover how professional wedding cinematographers craft compelling narratives that capture the essence of your special day.",
+      category: "cinematography",
+      date: "January 18, 2023",
+      image: "https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      author: {
+        name: "Emily Chen",
+        role: "Founder & Lead Cinematographer",
+        image: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+      }
     }
   ];
 
-  const filteredPosts = activeCategory === 'all' 
-    ? blogPosts 
+  const filteredPosts = activeCategory === 'all'
+    ? blogPosts
     : blogPosts.filter(post => post.category === activeCategory);
 
   return (
-    <div className="min-h-screen bg-background">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="min-h-screen bg-background"
+    >
       <Helmet>
         <title>Blog | Vynora Wedding Company</title>
         <meta name="description" content="Read our latest insights, stories, and inspiration from the world of wedding cinematography." />
@@ -97,8 +113,8 @@ const Blog = () => {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-5xl font-heading mb-6 text-white">Our <span className="gold-gradient">Blog</span></h1>
-            <p className="text-lg text-white/80 max-w-3xl mx-auto">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading mb-6 text-white">Our <span className="gold-gradient">Blog</span></h1>
+            <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto font-heading tracking-wider">
               Insights, stories, and inspiration from the world of wedding cinematography.
             </p>
           </motion.div>
@@ -115,7 +131,7 @@ const Blog = () => {
                 onClick={() => setActiveCategory(category.id)}
                 className={`px-6 py-2 rounded-full text-sm transition-all duration-300 ${
                   activeCategory === category.id
-                    ? 'bg-gold text-white'
+                    ? 'bg-gold text-white shadow-md'
                     : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
                 }`}
               >
@@ -127,48 +143,42 @@ const Blog = () => {
       </section>
       
       {/* Featured Post */}
-      <section className="pb-8 pt-4 px-6 md:px-12 lg:px-24">
+      <section className="py-12 px-6 md:px-12 lg:px-24">
         <div className="container mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-slate-50 rounded-lg overflow-hidden shadow-md"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-white rounded-md shadow-md overflow-hidden"
           >
-            <div className="h-full">
+            <div className="relative h-full min-h-[300px] lg:min-h-full">
               <img 
-                src="https://images.pexels.com/photos/1114425/pexels-photo-1114425.jpeg?auto=compress&cs=tinysrgb&w=1000" 
+                src="https://images.pexels.com/photos/1456613/pexels-photo-1456613.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
                 alt="Featured post" 
-                className="w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-cover"
               />
             </div>
-            <div className="p-8">
-              <div className="mb-4">
-                <span className="text-gold text-sm font-medium">FEATURED</span>
-              </div>
-              <h2 className="text-2xl md:text-3xl font-heading mb-4">The Art of Cinematic Wedding Storytelling</h2>
-              <p className="text-muted-foreground mb-6">
-                How we approach each wedding as a unique story, carefully crafting a narrative that captures not just the events, but the emotions and atmosphere of your special day.
-              </p>
+            <div className="p-8 lg:p-12">
+              <span className="inline-block bg-gold/10 text-gold text-xs px-3 py-1 rounded-full mb-4 font-medium">Featured Article</span>
+              <h2 className="text-2xl md:text-3xl font-heading font-medium mb-4">The Future of Wedding Films: Emerging Technologies in 2023</h2>
+              <p className="text-muted-foreground mb-6">From AI-enhanced editing to immersive VR experiences, discover how cutting-edge technology is transforming the way we capture and relive wedding memories.</p>
               <div className="flex items-center mb-6">
-                <div className="w-10 h-10 rounded-full overflow-hidden mr-3">
-                  <img 
-                    src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=100" 
-                    alt="Emily Chen" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+                <img 
+                  src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" 
+                  alt="Emily Chen" 
+                  className="w-10 h-10 rounded-full object-cover mr-3"
+                />
                 <div>
-                  <p className="font-medium text-sm">Emily Chen</p>
-                  <p className="text-xs text-muted-foreground">May 2, 2023 · 8 min read</p>
+                  <p className="text-sm font-medium">Emily Chen</p>
+                  <p className="text-xs text-muted-foreground">June 1, 2023</p>
                 </div>
               </div>
               <a 
                 href="#" 
-                className="inline-block bg-gold hover:bg-gold-dark text-white py-2 px-6 rounded-sm transition-all duration-300 text-sm font-medium tracking-wider"
+                className="inline-block font-medium text-gold border-b-2 border-transparent hover:border-gold transition-all duration-300"
               >
-                Read More
+                Read Article →
               </a>
             </div>
           </motion.div>
@@ -176,17 +186,17 @@ const Blog = () => {
       </section>
       
       {/* Blog Posts Grid */}
-      <section className="py-8 px-6 md:px-12 lg:px-24">
+      <section className="py-12 px-6 md:px-12 lg:px-24">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredPosts.map((post, index) => (
-              <motion.article
+              <motion.div
                 key={post.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 * index }}
                 viewport={{ once: true }}
-                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300"
+                className="bg-white rounded-md overflow-hidden shadow-md hover:shadow-lg transition-all duration-300"
               >
                 <div className="aspect-video overflow-hidden">
                   <img 
@@ -197,26 +207,29 @@ const Blog = () => {
                 </div>
                 <div className="p-6">
                   <div className="flex justify-between items-center mb-3">
+                    <span className="text-xs font-medium text-gold bg-gold/10 px-3 py-1 rounded-full">{categories.find(cat => cat.id === post.category)?.name}</span>
                     <span className="text-xs text-muted-foreground">{post.date}</span>
-                    <span className="text-xs bg-slate-100 px-3 py-1 rounded-full">{categories.find(c => c.id === post.category)?.name}</span>
                   </div>
-                  <h3 className="text-xl font-medium mb-3">{post.title}</h3>
-                  <p className="text-sm text-muted-foreground mb-4">{post.excerpt}</p>
+                  <h3 className="text-xl font-heading font-medium mb-3">{post.title}</h3>
+                  <p className="text-muted-foreground mb-6 line-clamp-3">{post.excerpt}</p>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center">
-                      <div className="w-8 h-8 rounded-full overflow-hidden mr-2">
-                        <img 
-                          src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=100" 
-                          alt={post.author} 
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <span className="text-xs">{post.author}</span>
+                      <img 
+                        src={post.author.image} 
+                        alt={post.author.name} 
+                        className="w-8 h-8 rounded-full object-cover mr-2"
+                      />
+                      <span className="text-xs font-medium">{post.author.name}</span>
                     </div>
-                    <a href="#" className="text-gold text-sm font-medium hover:underline">Read More</a>
+                    <a 
+                      href="#" 
+                      className="text-sm font-medium text-gold hover:underline"
+                    >
+                      Read More
+                    </a>
                   </div>
                 </div>
-              </motion.article>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -230,35 +243,31 @@ const Blog = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="max-w-3xl mx-auto text-center"
+            className="text-center max-w-2xl mx-auto"
           >
             <h2 className="text-3xl font-heading mb-6">Subscribe to Our Newsletter</h2>
             <p className="text-muted-foreground mb-8">
-              Get the latest wedding cinematography tips, trends, and inspiration delivered directly to your inbox.
+              Stay updated with our latest articles, wedding tips, and inspiration for your special day.
             </p>
-            <form className="flex flex-col sm:flex-row gap-4 justify-center">
+            <form className="flex flex-col md:flex-row gap-3">
               <input 
                 type="email" 
                 placeholder="Your email address" 
-                className="px-4 py-3 border border-slate-300 rounded-sm flex-grow focus:outline-none focus:ring-2 focus:ring-gold/50"
-                required
+                className="flex-grow px-4 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold/50 transition-colors md:rounded-r-none"
               />
               <button 
                 type="submit" 
-                className="bg-gold hover:bg-gold-dark text-white py-3 px-6 rounded-sm transition-all duration-300 text-sm font-medium tracking-wider"
+                className="bg-gold hover:bg-gold-dark text-white py-3 px-8 rounded-full transition-all duration-300 text-sm font-medium tracking-wider shadow-md hover:shadow-lg hover:scale-105 transform hover:translate-y-[-2px] border border-gold/20 md:rounded-l-none"
               >
                 Subscribe
               </button>
             </form>
-            <p className="text-xs text-muted-foreground mt-4">
-              We respect your privacy. Unsubscribe at any time.
-            </p>
           </motion.div>
         </div>
       </section>
       
       <Footer />
-    </div>
+    </motion.div>
   );
 };
 
