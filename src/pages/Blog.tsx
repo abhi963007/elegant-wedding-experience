@@ -39,7 +39,7 @@ const Blog = () => {
       excerpt: "Learn why photographers and cinematographers love golden hour, and how to plan your wedding to take advantage of this magical light.",
       category: "cinematography",
       date: "April 28, 2023",
-      image: "https://images.pexels.com/photos/1247292/pexels-photo-1247292.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      image: "https://images.pexels.com/photos/1589217/pexels-photo-1589217.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       author: {
         name: "David Kim",
         role: "Drone Specialist & Cinematographer",

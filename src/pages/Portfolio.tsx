@@ -25,7 +25,7 @@ const Portfolio = () => {
       title: "Emma & James",
       location: "Malibu, California",
       category: "beach",
-      thumbnail: "https://images.pexels.com/photos/1244396/pexels-photo-1244396.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      thumbnail: "https://images.pexels.com/photos/2253870/pexels-photo-2253870.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
     },
     {
@@ -57,7 +57,7 @@ const Portfolio = () => {
       title: "Olivia & Noah",
       location: "Santa Barbara, California",
       category: "beach",
-      thumbnail: "https://images.pexels.com/photos/169198/pexels-photo-169198.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      thumbnail: "https://images.pexels.com/photos/1024960/pexels-photo-1024960.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
     },
     {
@@ -65,7 +65,7 @@ const Portfolio = () => {
       title: "Ava & Liam",
       location: "Lake Como, Italy",
       category: "destination",
-      thumbnail: "https://images.pexels.com/photos/1247292/pexels-photo-1247292.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      thumbnail: "https://images.pexels.com/photos/1589216/pexels-photo-1589216.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
     },
     {

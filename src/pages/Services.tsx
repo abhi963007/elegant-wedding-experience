@@ -67,7 +67,7 @@ const Services = () => {
               {
                 title: "Engagement Sessions",
                 description: "Capture your love story before the wedding with a beautifully filmed engagement video at a location of your choice.",
-                image: "https://images.pexels.com/photos/1247201/pexels-photo-1247201.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                image: "https://images.pexels.com/photos/3916019/pexels-photo-3916019.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               },
               {
                 title: "Raw Footage Archive",
