@@ -54,7 +54,7 @@ const Navbar = () => {
               key={item.name}
               to={item.path}
               className={({ isActive }) => cn(
-                'text-sm font-medium tracking-wide uppercase transition-colors hover:text-gold relative pb-1',
+                'text-sm font-heading font-medium tracking-wider uppercase transition-colors hover:text-gold relative pb-1',
                 isActive ? 'text-gold' : scrolled ? 'text-foreground' : 'text-white'
               )}
             >
@@ -103,7 +103,7 @@ const Navbar = () => {
                   to={item.path}
                   onClick={() => setMobileMenuOpen(false)}
                   className={({ isActive }) => cn(
-                    'text-sm font-medium tracking-wide transition-colors hover:text-gold py-2',
+                    'text-sm font-heading font-medium tracking-wider transition-colors hover:text-gold py-2',
                     isActive ? 'text-gold' : 'text-foreground'
                   )}
                 >

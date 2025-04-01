@@ -15,10 +15,10 @@ const AboutSection = () => {
           >
             <h2 className="text-3xl md:text-4xl font-heading">Cinematic Wedding <span className="gold-gradient">Films</span> That Tell Your Story</h2>
             <div className="w-20 h-1 bg-gold"></div>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed font-serif italic">
               At Vynora Wedding Company, we believe that your wedding film should be as unique as your love story. Our team of skilled cinematographers and editors work tirelessly to create a cinematic experience that captures the emotions, details, and magic of your special day.
             </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed font-serif italic">
               From tender moments to grand celebrations, we document your wedding day with an artistic eye and technical excellence, crafting a timeless keepsake you'll treasure for generations.
             </p>
             <div className="pt-6">

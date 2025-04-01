@@ -59,13 +59,13 @@ const VideoHero = () => {
             animate={{ opacity: isVideoLoaded ? 1 : 0, y: isVideoLoaded ? 0 : 20 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <span className="gold-gradient">Capturing Moments,</span>
+            <span className="gold-gradient">Capturing Moments</span>
             <br />
             <span className="tracking-wider">Crafting Memories</span>
           </motion.h1>
           
           <motion.p 
-            className="text-lg md:text-xl opacity-90 mb-8 max-w-2xl mx-auto font-light"
+            className="text-lg md:text-xl opacity-90 mb-8 max-w-2xl mx-auto font-heading tracking-wider"
             initial={{ opacity: 0 }}
             animate={{ opacity: isVideoLoaded ? 1 : 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -80,7 +80,7 @@ const VideoHero = () => {
           >
             <Link 
               to="/contact" 
-              className="bg-gold hover:bg-gold-dark text-white py-3 px-8 rounded-sm transition-all duration-300 text-sm font-medium tracking-wider inline-block"
+              className="bg-gold hover:bg-gold-dark text-white py-3 px-8 rounded-sm transition-all duration-300 text-sm font-heading font-medium tracking-wider inline-block"
             >
               Book a Consultation
             </Link>

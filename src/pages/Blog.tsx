@@ -26,7 +26,7 @@ const Blog = () => {
       category: "tips",
       date: "April 15, 2023",
       excerpt: "From getting ready moments to the first dance, discover the essential shots that will make your wedding film truly memorable.",
-      image: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      image: "https://images.pexels.com/photos/1244396/pexels-photo-1244396.jpeg?auto=compress&cs=tinysrgb&w=1000",
       author: "Emily Chen"
     },
     {
@@ -35,7 +35,7 @@ const Blog = () => {
       category: "tips",
       date: "March 22, 2023",
       excerpt: "Lighting, acoustics, backdrop—all things to consider when selecting a venue that will translate beautifully on film.",
-      image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      image: "https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&cs=tinysrgb&w=1000",
       author: "David Kim"
     },
     {
@@ -44,7 +44,7 @@ const Blog = () => {
       category: "stories",
       date: "February 14, 2023",
       excerpt: "A breathtaking celebration on the shores of Malibu, featuring emotional vows and spectacular golden hour footage.",
-      image: "https://images.unsplash.com/photo-1511795409834-c70f1b20017b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      image: "https://images.pexels.com/photos/169198/pexels-photo-169198.jpeg?auto=compress&cs=tinysrgb&w=1000",
       author: "Sophia Rodriguez"
     },
     {
@@ -53,7 +53,7 @@ const Blog = () => {
       category: "inspiration",
       date: "January 30, 2023",
       excerpt: "From shaky handheld camcorders to cinematic masterpieces—how wedding films have transformed over the decades.",
-      image: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      image: "https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&w=1000",
       author: "Marcus Johnson"
     },
     {
@@ -62,7 +62,7 @@ const Blog = () => {
       category: "tips",
       date: "December 10, 2022",
       excerpt: "How to structure your wedding day schedule to ensure we capture all the important moments in the best light possible.",
-      image: "https://images.unsplash.com/photo-1522673607200-164d1b3ce551?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      image: "https://images.pexels.com/photos/2959192/pexels-photo-2959192.jpeg?auto=compress&cs=tinysrgb&w=1000",
       author: "Emily Chen"
     },
     {
@@ -71,7 +71,7 @@ const Blog = () => {
       category: "behind",
       date: "November 5, 2022",
       excerpt: "What does it take to film a wedding? Follow our team from sunrise preparations to the last dance.",
-      image: "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      image: "https://images.pexels.com/photos/1456613/pexels-photo-1456613.jpeg?auto=compress&cs=tinysrgb&w=1000",
       author: "David Kim"
     }
   ];
@@ -138,7 +138,7 @@ const Blog = () => {
           >
             <div className="h-full">
               <img 
-                src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                src="https://images.pexels.com/photos/1114425/pexels-photo-1114425.jpeg?auto=compress&cs=tinysrgb&w=1000" 
                 alt="Featured post" 
                 className="w-full h-full object-cover"
               />
@@ -154,7 +154,7 @@ const Blog = () => {
               <div className="flex items-center mb-6">
                 <div className="w-10 h-10 rounded-full overflow-hidden mr-3">
                   <img 
-                    src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" 
+                    src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=100" 
                     alt="Emily Chen" 
                     className="w-full h-full object-cover"
                   />
@@ -206,7 +206,7 @@ const Blog = () => {
                     <div className="flex items-center">
                       <div className="w-8 h-8 rounded-full overflow-hidden mr-2">
                         <img 
-                          src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" 
+                          src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=100" 
                           alt={post.author} 
                           className="w-full h-full object-cover"
                         />

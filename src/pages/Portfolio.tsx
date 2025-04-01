@@ -25,7 +25,7 @@ const Portfolio = () => {
       title: "Emma & James",
       location: "Malibu, California",
       category: "beach",
-      thumbnail: "https://images.unsplash.com/photo-1583939411023-14783179e581?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      thumbnail: "https://images.pexels.com/photos/1244396/pexels-photo-1244396.jpeg?auto=compress&cs=tinysrgb&w=1000",
       videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
     },
     {
@@ -33,7 +33,7 @@ const Portfolio = () => {
       title: "Sofia & Michael",
       location: "Tuscany, Italy",
       category: "destination",
-      thumbnail: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      thumbnail: "https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&cs=tinysrgb&w=1000",
       videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
     },
     {
@@ -41,7 +41,7 @@ const Portfolio = () => {
       title: "Alexandra & William",
       location: "Beverly Hills, California",
       category: "estate",
-      thumbnail: "https://images.unsplash.com/photo-1606216769783-a9b2b6a982b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      thumbnail: "https://images.pexels.com/photos/3014860/pexels-photo-3014860.jpeg?auto=compress&cs=tinysrgb&w=1000",
       videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
     },
     {
@@ -49,7 +49,7 @@ const Portfolio = () => {
       title: "Jessica & Robert",
       location: "New York, New York",
       category: "traditional",
-      thumbnail: "https://images.unsplash.com/photo-1606218143269-5347e06273e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      thumbnail: "https://images.pexels.com/photos/1456613/pexels-photo-1456613.jpeg?auto=compress&cs=tinysrgb&w=1000",
       videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
     },
     {
@@ -57,7 +57,7 @@ const Portfolio = () => {
       title: "Olivia & Ethan",
       location: "Maui, Hawaii",
       category: "beach",
-      thumbnail: "https://images.unsplash.com/photo-1519741347686-c1e0aadf4611?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      thumbnail: "https://images.pexels.com/photos/2959192/pexels-photo-2959192.jpeg?auto=compress&cs=tinysrgb&w=1000",
       videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
     },
     {
@@ -65,7 +65,7 @@ const Portfolio = () => {
       title: "Isabella & Thomas",
       location: "Santorini, Greece",
       category: "destination",
-      thumbnail: "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      thumbnail: "https://images.pexels.com/photos/169198/pexels-photo-169198.jpeg?auto=compress&cs=tinysrgb&w=1000",
       videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
     }
   ];
