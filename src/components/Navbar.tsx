@@ -7,8 +7,11 @@ import { cn } from '@/lib/utils';
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
+    
     const handleScroll = () => {
       if (window.scrollY > 50) {
         setScrolled(true);
@@ -34,16 +37,21 @@ const Navbar = () => {
   return (
     <header 
       className={cn(
-        'fixed top-0 left-0 w-full z-50 transition-all duration-300 py-6',
+        'fixed top-0 left-0 w-full z-50 transition-all duration-300',
         scrolled 
           ? 'bg-background/90 backdrop-blur-md py-4 shadow-md' 
-          : 'bg-dark/50 backdrop-blur-sm'
+          : 'bg-dark/50 backdrop-blur-sm py-6'
       )}
+      style={{ 
+        opacity: mounted ? 1 : 0,
+        visibility: mounted ? 'visible' : 'hidden'
+      }}
     >
       <div className="container-padding mx-auto flex justify-between items-center">
         <NavLink to="/" className="flex items-center">
-          <span className="font-heading text-2xl font-bold tracking-wide">
-            <span className="text-gold">VYN</span>ORA
+          <span className="font-heading text-2xl font-bold tracking-wide py-1">
+            <span className="text-gold">VYN</span>
+            <span className={scrolled ? "text-foreground" : "text-white"}>ORA</span>
           </span>
         </NavLink>
         
@@ -67,7 +75,7 @@ const Navbar = () => {
         <div className="hidden lg:block">
           <NavLink 
             to="/contact" 
-            className="bg-gold hover:bg-gold-dark text-white py-2.5 px-6 rounded-sm transition-colors duration-300 text-sm font-medium tracking-wide"
+            className="bg-gold hover:bg-gold-dark text-white py-2.5 px-8 rounded-full transition-all duration-300 text-sm font-medium tracking-wider shadow-md hover:shadow-lg hover:scale-105 transform hover:translate-y-[-2px] border border-gold/20"
           >
             Book Now
           </NavLink>
@@ -113,7 +121,7 @@ const Navbar = () => {
               <NavLink 
                 to="/contact" 
                 onClick={() => setMobileMenuOpen(false)}
-                className="bg-gold hover:bg-gold-dark text-white py-2.5 px-6 rounded-sm transition-colors duration-300 text-sm font-medium tracking-wide self-start mt-2"
+                className="bg-gold hover:bg-gold-dark text-white py-2.5 px-8 rounded-full transition-all duration-300 text-sm font-medium tracking-wider self-start mt-2 shadow-md hover:shadow-lg hover:scale-105 transform hover:translate-y-[-2px] border border-gold/20"
               >
                 Book Now
               </NavLink>
