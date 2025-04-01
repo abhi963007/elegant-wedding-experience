@@ -246,31 +246,98 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-10"
           >
-            <h2 className="text-3xl font-heading mb-6">Find Us</h2>
+            <h2 className="text-2xl md:text-3xl font-heading mb-4">Visit Our Studio</h2>
             <p className="text-muted-foreground max-w-3xl mx-auto">
-              Located in the heart of Los Angeles, our studio is easily accessible for in-person consultations.
+              Our studio is located in the heart of Los Angeles, easily accessible from major highways.
             </p>
           </motion.div>
           
+          <div className="rounded-lg overflow-hidden shadow-lg">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.7152203584424!2d-118.37149428439394!3d34.0778996806087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2b9326a28c76f%3A0x9b1303b5c93f3b13!2sBeverly%20Hills%2C%20CA%2090210!5e0!3m2!1sen!2sus!4v1625772694043!5m2!1sen!2sus" 
+              width="100%" 
+              height="450" 
+              style={{ border: 0 }} 
+              allowFullScreen 
+              loading="lazy"
+              title="Our Location"
+              className="grayscale hover:grayscale-0 transition-all duration-500"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+      
+      {/* FAQ Section */}
+      <section className="py-16 px-6 md:px-12 lg:px-24">
+        <div className="container mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="rounded-md overflow-hidden shadow-md aspect-video"
+            className="text-center mb-12"
           >
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26430.39386279673!2d-118.51452221918938!3d34.02894320362823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2a4cec2910019%3A0xb4170ab5ff23f5ab!2sSanta%20Monica%2C%20CA!5e0!3m2!1sen!2sus!4v1619826397954!5m2!1sen!2sus" 
-              width="100%" 
-              height="100%" 
-              style={{ border: 0 }} 
-              allowFullScreen={true} 
-              loading="lazy"
-              title="Vynora Wedding Company Location"
-            ></iframe>
+            <h2 className="text-2xl md:text-3xl font-heading mb-4">Frequently Asked Questions</h2>
+            <p className="text-muted-foreground max-w-3xl mx-auto">
+              Answers to some common questions about our services and process.
+            </p>
           </motion.div>
+          
+          <div className="max-w-4xl mx-auto space-y-6">
+            <motion.div 
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="bg-white p-6 rounded-md shadow-md"
+            >
+              <h3 className="text-xl font-heading mb-2">How far in advance should we book?</h3>
+              <p className="text-muted-foreground">
+                We recommend booking as soon as you have your wedding date secured. For peak wedding season (May-October), we typically book 10-12 months in advance. However, we occasionally have last-minute availability, so don't hesitate to reach out even for events in the near future.
+              </p>
+            </motion.div>
+            
+            <motion.div 
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="bg-white p-6 rounded-md shadow-md"
+            >
+              <h3 className="text-xl font-heading mb-2">Do you travel for weddings?</h3>
+              <p className="text-muted-foreground">
+                Absolutely! We film weddings across the US and worldwide. Destination wedding coverage includes travel and accommodation fees based on the location. We've filmed weddings in Italy, France, Mexico, and many other beautiful destinations.
+              </p>
+            </motion.div>
+            
+            <motion.div 
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="bg-white p-6 rounded-md shadow-md"
+            >
+              <h3 className="text-xl font-heading mb-2">How long until we receive our wedding film?</h3>
+              <p className="text-muted-foreground">
+                We deliver highlight films within 8-12 weeks of your wedding date. Full-length documentary edits may take an additional 2-4 weeks. During peak season, delivery times may be slightly longer, but we always keep you updated on the progress.
+              </p>
+            </motion.div>
+            
+            <motion.div 
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="bg-white p-6 rounded-md shadow-md"
+            >
+              <h3 className="text-xl font-heading mb-2">Do you work with photographers?</h3>
+              <p className="text-muted-foreground">
+                We collaborate seamlessly with photographers and have established relationships with many top wedding photographers. We can recommend talented photographers that complement our style if you're still searching for one.
+              </p>
+            </motion.div>
+          </div>
         </div>
       </section>
       

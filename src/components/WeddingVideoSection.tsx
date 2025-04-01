@@ -1,55 +1,10 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import ReactPlayer from 'react-player';
 
 const WeddingVideoSection = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [hasStarted, setHasStarted] = useState(false);
-  const [thumbnailUrl, setThumbnailUrl] = useState('');
-  const playerRef = useRef<ReactPlayer>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    // Create a hidden video element to extract the thumbnail
-    const video = document.createElement('video');
-    video.preload = 'metadata';
-    video.src = '/assets/videos/videoplayback.mp4';
-    video.muted = true;
-
-    // Once the video is loaded, seek to a frame and capture it
-    video.onloadeddata = () => {
-      // Seek to 1 second to skip potential black frames at the start
-      video.currentTime = 1;
-      
-      video.onseeked = () => {
-        // Create a canvas to capture the frame
-        const canvas = document.createElement('canvas');
-        canvas.width = video.videoWidth;
-        canvas.height = video.videoHeight;
-        const ctx = canvas.getContext('2d');
-        
-        if (ctx) {
-          // Draw the video frame to the canvas
-          ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-          
-          // Convert the canvas to a data URL
-          const dataUrl = canvas.toDataURL('image/jpeg');
-          setThumbnailUrl(dataUrl);
-          
-          // Clean up
-          URL.revokeObjectURL(video.src);
-        }
-      };
-    };
-
-    return () => {
-      // Clean up
-      if (video) {
-        video.onloadeddata = null;
-        video.onseeked = null;
-      }
-    };
-  }, []);
 
   const handlePlay = () => {
     setIsPlaying(true);
@@ -96,7 +51,7 @@ const WeddingVideoSection = () => {
                 className="absolute inset-0 z-10 flex items-center justify-center cursor-pointer"
                 onClick={handleClick}
                 style={{
-                  backgroundImage: thumbnailUrl ? `url(${thumbnailUrl})` : '',
+                  backgroundImage: `url('https://images.pexels.com/photos/1730877/pexels-photo-1730877.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                 }}
@@ -111,8 +66,7 @@ const WeddingVideoSection = () => {
             )}
             
             <ReactPlayer
-              ref={playerRef}
-              url="/assets/videos/videoplayback.mp4"
+              url="https://www.youtube.com/watch?v=N9zcvKqraxQ"
               width="100%"
               height="100%"
               playing={isPlaying}
@@ -120,10 +74,11 @@ const WeddingVideoSection = () => {
               onPlay={handlePlay}
               onPause={handlePause}
               config={{
-                file: {
-                  attributes: {
-                    controlsList: 'nodownload',
-                    disablePictureInPicture: true,
+                youtube: {
+                  playerVars: {
+                    modestbranding: 1,
+                    rel: 0,
+                    showinfo: 0,
                   }
                 }
               }}
@@ -131,7 +86,6 @@ const WeddingVideoSection = () => {
                 borderRadius: '0.375rem',
                 display: hasStarted ? 'block' : 'none'
               }}
-              progressInterval={1000}
               className="react-player"
             />
           </div>
