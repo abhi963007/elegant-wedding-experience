@@ -23,29 +23,16 @@ const WeddingVideoSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
-          className="aspect-video rounded-md overflow-hidden shadow-lg bg-slate-100"
+          className="aspect-video rounded-md overflow-hidden shadow-lg"
         >
-          {/* Placeholder for the wedding video that will be added later */}
-          <div className="w-full h-full flex items-center justify-center">
-            <div className="text-center p-8">
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-16 h-16 mx-auto mb-4 text-gold opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <p className="text-muted-foreground">Wedding video will be added here</p>
-            </div>
-          </div>
-          
-          {/* Once the video is available, uncomment and update the src attribute 
-          <iframe
-            className="w-full h-full"
-            src=""
-            title="Wedding Masterpiece"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
-          */}
+          <video
+            className="w-full h-full object-cover"
+            controls
+            poster="/assets/images/video-poster.jpg"
+          >
+            <source src="/assets/videos/videoplayback.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </motion.div>
         
         <motion.div
