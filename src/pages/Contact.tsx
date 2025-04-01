@@ -337,8 +337,8 @@ const Contact = () => {
                 We collaborate seamlessly with photographers and have established relationships with many top wedding photographers. We can recommend talented photographers that complement our style if you're still searching for one.
               </p>
             </motion.div>
-          </div>
         </div>
+      </div>
       </section>
       
       <Footer />

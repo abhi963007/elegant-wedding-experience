@@ -384,7 +384,7 @@ const Pricing = () => {
               </a>
             </div>
           </motion.div>
-        </div>
+      </div>
       </section>
       
       <Footer />
