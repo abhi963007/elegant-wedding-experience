@@ -89,7 +89,7 @@ const Portfolio = () => {
       title: "Amelia & Lucas",
       location: "Newport Beach, California",
       category: "beach",
-      thumbnail: "https://images.pexels.com/photos/1540411/pexels-photo-1540411.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      thumbnail: "https://images.pexels.com/photos/169193/pexels-photo-169193.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
     }
   ];

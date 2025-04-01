@@ -80,7 +80,7 @@ const VideoHero = () => {
           >
             <Link 
               to="/contact" 
-              className="bg-gold hover:bg-gold-dark text-white py-3 px-8 rounded-sm transition-all duration-300 text-sm font-heading font-medium tracking-wider inline-block"
+              className="bg-gold hover:bg-gold-dark text-white py-3 px-8 rounded-full transition-all duration-300 text-sm font-heading font-medium tracking-wider inline-block shadow-md hover:shadow-lg hover:scale-105 transform hover:translate-y-[-2px] border border-gold/20"
             >
               Book a Consultation
             </Link>
