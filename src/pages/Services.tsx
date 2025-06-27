@@ -31,7 +31,7 @@ const Services = () => {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading mb-6 text-white">Our <span className="gold-gradient">Services</span></h1>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-montague mb-6 text-white">Our <span className="gold-gradient">Services</span></h1>
             <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto font-heading tracking-wider">
               Cinematic storytelling that preserves your wedding memories for a lifetime.
             </p>
@@ -91,7 +91,7 @@ const Services = () => {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-heading font-medium mb-3">{service.title}</h3>
+                  <h3 className="text-xl font-montague font-medium mb-3">{service.title}</h3>
                   <p className="text-muted-foreground">{service.description}</p>
                 </div>
               </motion.div>
@@ -110,7 +110,7 @@ const Services = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-heading mb-6">Our Process</h2>
+            <h2 className="text-3xl font-montague mb-6">Our Process</h2>
             <p className="text-muted-foreground max-w-3xl mx-auto">
               How we work together to create your perfect wedding film.
             </p>
@@ -147,10 +147,10 @@ const Services = () => {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="w-16 h-16 bg-gold text-white rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-heading">
+                <div className="w-16 h-16 bg-gold text-white rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-montague">
                   {process.step}
                 </div>
-                <h3 className="text-xl font-heading font-medium mb-3">{process.title}</h3>
+                <h3 className="text-xl font-montague font-medium mb-3">{process.title}</h3>
                 <p className="text-muted-foreground">{process.description}</p>
               </motion.div>
             ))}
@@ -168,7 +168,7 @@ const Services = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl font-heading mb-6">Premium Equipment</h2>
+              <h2 className="text-3xl font-montague mb-6">Premium Equipment</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
                   We use only the highest quality cinematic cameras, lenses, stabilizers, and audio equipment to ensure your wedding film looks and sounds spectacular.
