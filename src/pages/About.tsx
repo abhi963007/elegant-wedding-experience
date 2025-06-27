@@ -108,16 +108,6 @@ const About = () => {
                 name: "Joel Joseph",
                 role: "Founder & Senior Photographer",
                 image: "/assets/Images/joel.png"
-              },
-              {
-                name: "Nibin Lal Babu",
-                role: "Senior Photographer",
-                image: "/assets/Images/nibin.png"
-              },
-              {
-                name: "Bibin Sebastian",
-                role: "Senior Videographer",
-                image: "https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               }
             ].map((member, index) => (
               <motion.div
