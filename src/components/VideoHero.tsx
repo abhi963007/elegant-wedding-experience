@@ -1,9 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { Volume2, VolumeX } from 'lucide-react';
 
 const VideoHero = () => {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -36,7 +38,7 @@ const VideoHero = () => {
       <video
         ref={videoRef}
         autoPlay
-        muted
+        muted={isMuted}
         loop
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
