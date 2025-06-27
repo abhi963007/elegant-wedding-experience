@@ -102,17 +102,17 @@ const About = () => {
               {
                 name: "Anandhu K S",
                 role: "Founder & Senior Editor",
-                image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                image: "/assets/Images/anandhu.jpg"
               },
               {
                 name: "Joel Joseph",
                 role: "Founder & Senior Photographer",
-                image: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                image: "/assets/Images/joel.png"
               },
               {
                 name: "Nibin Lal Babu",
                 role: "Senior Photographer",
-                image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                image: "/assets/Images/nibin.png"
               },
               {
                 name: "Bibin Sebastian",
