@@ -47,9 +47,9 @@ const Navbar = () => {
         visibility: mounted ? 'visible' : 'hidden'
       }}
     >
-      <div className="container-padding mx-auto flex justify-between items-center">
+      <div className="container-padding mx-auto flex justify-between items-center font-montague">
         <NavLink to="/" className="flex items-center">
-          <span className="font-heading text-2xl font-bold tracking-wide py-1">
+          <span className="font-montague text-2xl font-bold tracking-wide py-1">
             <span className="text-gold">VYN</span>
             <span className={scrolled ? "text-foreground" : "text-white"}>ORA</span>
           </span>
