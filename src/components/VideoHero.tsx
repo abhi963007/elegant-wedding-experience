@@ -76,9 +76,9 @@ const VideoHero = () => {
             animate={{ opacity: isVideoLoaded ? 1 : 0, y: isVideoLoaded ? 0 : 20 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <span className="gold-gradient">Capturing Moments</span>
+            <span className="gold-gradient font-montague">Capturing Moments</span>
             <br />
-            <span className="tracking-wider">Crafting Memories</span>
+            <span className="tracking-wider font-montague">Crafting Memories</span>
           </motion.h1>
           
           <motion.p 
