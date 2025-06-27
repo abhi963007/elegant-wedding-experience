@@ -69,6 +69,7 @@ export default {
         sm: 'calc(var(--radius) - 4px)'
       },
       fontFamily: {
+      melikan: ["'Melikan'", 'cursive'],
       montague: ["'House of Montague'", 'cursive'],
         sans: ['Inter', 'sans-serif'],
         serif: ['Playfair Display', 'serif'],

@@ -82,7 +82,7 @@ const VideoHero = () => {
           </motion.h1>
           
           <motion.p 
-            className="text-lg md:text-xl opacity-90 mb-8 max-w-2xl mx-auto font-heading tracking-wider"
+            className="text-lg md:text-xl opacity-90 mb-8 max-w-2xl mx-auto font-melikan tracking-wider"
             initial={{ opacity: 0 }}
             animate={{ opacity: isVideoLoaded ? 1 : 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
