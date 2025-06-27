@@ -46,6 +46,21 @@ const VideoHero = () => {
         <source src="/assets/videos/backgorund-video.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
+
+      {/* Mute / Unmute Button */}
+      <button
+        onClick={() => {
+          const video = videoRef.current;
+          if (video) {
+            video.muted = !isMuted;
+            setIsMuted(!isMuted);
+          }
+        }}
+        className="absolute bottom-6 right-6 z-30 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full backdrop-blur-md transition-colors"
+        aria-label={isMuted ? 'Unmute background video' : 'Mute background video'}
+      >
+        {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
+      </button>
       
       {/* Hero Content */}
       <div className="relative z-20 flex flex-col justify-center items-center h-full text-white px-6 md:px-12 lg:px-24">
