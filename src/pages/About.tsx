@@ -100,23 +100,23 @@ const About = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {[
               {
-                name: "Emily Chen",
-                role: "Founder & Lead Cinematographer",
-                image: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              },
-              {
-                name: "Marcus Johnson",
-                role: "Senior Editor",
+                name: "Anandhu K S",
+                role: "Founder & Senior Editor",
                 image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               },
               {
-                name: "Sophia Rodriguez",
-                role: "Cinematographer",
+                name: "Joel Joseph",
+                role: "Founder & Senior Photographer",
+                image: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              },
+              {
+                name: "Nibin Lal Babu",
+                role: "Senior Photographer",
                 image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               },
               {
-                name: "David Kim",
-                role: "Drone Specialist & Cinematographer",
+                name: "Bibin Sebastian",
+                role: "Senior Videographer",
                 image: "https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               }
             ].map((member, index) => (
