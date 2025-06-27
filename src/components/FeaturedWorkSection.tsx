@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -9,42 +8,42 @@ const featuredWorks = [
     id: 1,
     title: "Sarah & Michael's Elegant Garden Wedding",
     category: "Wedding Film",
-    thumbnail: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+    thumbnail: "/assets/Images/Works-pic/ALB_0084 copy.jpg",
     videoId: "example1"
   },
   {
     id: 2,
     title: "Emma & John's Beach Ceremony",
     category: "Wedding Film",
-    thumbnail: "https://images.unsplash.com/photo-1519741347686-c1e0aadf4611?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80",
+    thumbnail: "/assets/Images/Works-pic/ALB_0161 copy.jpg",
     videoId: "example2"
   },
   {
     id: 3,
-    title: "Luxury Destination Wedding in Bali",
+    title: "Luxury Destination Wedding",
     category: "Pre-Wedding",
-    thumbnail: "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+    thumbnail: "/assets/Images/Works-pic/ALB_0609 copy.jpg",
     videoId: "example3"
   },
   {
     id: 4,
-    title: "Corporate Event Highlight",
+    title: "Traditional Wedding Celebration",
     category: "Event",
-    thumbnail: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+    thumbnail: "/assets/Images/Works-pic/ALB_0755 copy.jpg",
     videoId: "example4"
   },
   {
     id: 5,
     title: "Vineyard Wedding Cinematic Film",
     category: "Wedding Film",
-    thumbnail: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+    thumbnail: "/assets/Images/Works-pic/ALB_0842 copy.jpg",
     videoId: "example5"
   },
   {
     id: 6,
     title: "Romantic Pre-Wedding Shoot",
     category: "Pre-Wedding",
-    thumbnail: "https://images.unsplash.com/photo-1550005809-91ad75fb315f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80",
+    thumbnail: "/assets/Images/Works-pic/ALB_1041 copy.jpg",
     videoId: "example6"
   }
 ];
@@ -114,19 +113,6 @@ const FeaturedWorkSection = () => {
           ))}
         </motion.div>
 
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-center mt-12"
-        >
-          <a href="/portfolio" className="inline-flex items-center text-gold hover:text-gold-dark transition-colors border-b border-gold hover:border-gold-dark pb-1">
-            <span className="mr-2">View Full Portfolio</span>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z" fill="currentColor" />
-            </svg>
-          </a>
-        </motion.div>
       </div>
     </section>
   );

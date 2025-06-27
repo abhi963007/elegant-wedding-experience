@@ -22,12 +22,7 @@ const AboutSection = () => {
               From tender moments to grand celebrations, we document your wedding day with an artistic eye and technical excellence, crafting a timeless keepsake you'll treasure for generations.
             </p>
             <div className="pt-6">
-              <a 
-                href="/portfolio" 
-                className="inline-flex items-center group transition-all duration-300 font-medium text-gold hover:text-gold-dark"
-              >
-                View Our Work
-                <svg 
+                              <svg 
                   xmlns="http://www.w3.org/2000/svg" 
                   className="h-5 w-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" 
                   fill="none" 
@@ -36,8 +31,7 @@ const AboutSection = () => {
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
-              </a>
-            </div>
+                          </div>
           </motion.div>
           
           <motion.div
@@ -50,14 +44,14 @@ const AboutSection = () => {
             <div className="space-y-4">
               <div className="overflow-hidden rounded-md shadow-md">
                 <img 
-                  src="https://images.pexels.com/photos/2253870/pexels-photo-2253870.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                  src="/assets/Images/Works-pic/SBW05732 copy.jpg" 
                   alt="Wedding couple" 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 />
               </div>
               <div className="overflow-hidden rounded-md shadow-md">
                 <img 
-                  src="https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                  src="/assets/Images/Works-pic/SBW05813 copy.jpg" 
                   alt="Wedding ceremony" 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 />
@@ -66,14 +60,14 @@ const AboutSection = () => {
             <div className="space-y-4 mt-6">
               <div className="overflow-hidden rounded-md shadow-md">
                 <img 
-                  src="https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                  src="/assets/Images/Works-pic/DSC05643 copy.jpg" 
                   alt="Wedding details" 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 />
               </div>
               <div className="overflow-hidden rounded-md shadow-md">
                 <img 
-                  src="https://images.pexels.com/photos/1488312/pexels-photo-1488312.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                  src="/assets/Images/Works-pic/DSC05780 copy.jpg" 
                   alt="Wedding couple dancing" 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 />

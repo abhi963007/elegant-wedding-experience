@@ -47,32 +47,32 @@ const Services = () => {
               {
                 title: "Cinematic Wedding Films",
                 description: "Our signature full-day coverage includes a beautifully crafted 5-10 minute cinematic highlight film that tells the story of your wedding day.",
-                image: "https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                image: "/assets/Images/Works-pic/ALB_9032 copy.jpg"
               },
               {
                 title: "Documentary Edit",
                 description: "A longer 30-60 minute documentary-style edit that includes more moments, speeches, and interactions from your special day.",
-                image: "https://images.pexels.com/photos/1444438/pexels-photo-1444438.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                image: "/assets/Images/Works-pic/ALB_9189 copy.jpg"
               },
               {
                 title: "Same-Day Edit",
                 description: "A short film of your ceremony and preparations, edited during your reception and displayed for your guests on the same day.",
-                image: "https://images.pexels.com/photos/1540408/pexels-photo-1540408.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                image: "/assets/Images/Works-pic/ALB_9199 copy.jpg"
               },
               {
                 title: "Drone Aerial Coverage",
                 description: "Breathtaking aerial shots of your venue and surroundings, adding a cinematic perspective to your wedding film.",
-                image: "https://images.pexels.com/photos/2253894/pexels-photo-2253894.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                image: "/assets/Images/Works-pic/ALB_9226 copy.jpg"
               },
               {
                 title: "Engagement Sessions",
                 description: "Capture your love story before the wedding with a beautifully filmed engagement video at a location of your choice.",
-                image: "https://images.pexels.com/photos/3916019/pexels-photo-3916019.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                image: "/assets/Images/Works-pic/ALB_9434 copy.jpg"
               },
               {
                 title: "Raw Footage Archive",
                 description: "All the unedited footage from your wedding day, archived and delivered for your personal collection.",
-                image: "https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                image: "/assets/Images/Works-pic/ALB_9647 copy.jpg"
               }
             ].map((service, index) => (
               <motion.div
@@ -190,7 +190,7 @@ const Services = () => {
             >
               <div className="aspect-video rounded-md overflow-hidden shadow-md">
                 <img 
-                  src="https://images.pexels.com/photos/2608519/pexels-photo-2608519.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                  src="/assets/Images/Works-pic/SBW05895 copy.jpg" 
                   alt="Professional camera equipment" 
                   className="w-full h-full object-cover"
                 />
@@ -210,7 +210,7 @@ const Services = () => {
             viewport={{ once: true }}
             className="max-w-3xl mx-auto"
           >
-            <h2 className="text-3xl font-heading mb-6">Ready to Capture Your Special Day?</h2>
+            <h2 className="text-3xl font-montague mb-6">Ready to Capture Your Special Day?</h2>
             <p className="mb-8 text-white/80 font-heading tracking-wider">
               Let's discuss how we can create a beautiful wedding film that you'll cherish forever.
             </p>

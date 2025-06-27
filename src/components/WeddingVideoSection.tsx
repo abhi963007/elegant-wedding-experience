@@ -51,7 +51,7 @@ const WeddingVideoSection = () => {
                 className="absolute inset-0 z-10 flex items-center justify-center cursor-pointer"
                 onClick={handleClick}
                 style={{
-                  backgroundImage: `url('https://images.pexels.com/photos/1730877/pexels-photo-1730877.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')`,
+                  backgroundImage: `url('/assets/Images/Works-pic/SBW07793 copy.jpg')`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                 }}
