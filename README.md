@@ -174,6 +174,6 @@ For inquiries about our wedding cinematography services:
 ---
 
 <div align="center">
-  <p>Made with ❤️ by Vynora Wedding Company</p>
+  <p>Made with ❤️ by Vynora Wedding </p>
   <p>© 2024 Vynora Wedding Company. All rights reserved.</p>
 </div>
