@@ -9,49 +9,45 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { useContent } from '@/context/ContentContext';
-import { FeaturedWork } from '@/types/content';
-import { Skeleton } from '@/components/ui/skeleton';
 
-// Fallback data in case Firebase data is not available
-const fallbackFeaturedWorks = [
+const featuredWorks = [
   {
-    id: "1",
+    id: 1,
     title: "Sarah & Michael's Elegant Garden Wedding",
     category: "Wedding Film",
     thumbnail: "/assets/Images/Works-pic/ALB_0084 copy.jpg",
     videoId: "example1"
   },
   {
-    id: "2",
+    id: 2,
     title: "Emma & John's Beach Ceremony",
     category: "Wedding Film",
     thumbnail: "/assets/Images/Works-pic/ALB_0161 copy.jpg",
     videoId: "example2"
   },
   {
-    id: "3",
+    id: 3,
     title: "Luxury Destination Wedding",
     category: "Pre-Wedding",
     thumbnail: "/assets/Images/Works-pic/ALB_0609 copy.jpg",
     videoId: "example3"
   },
   {
-    id: "4",
+    id: 4,
     title: "Traditional Wedding Celebration",
     category: "Event",
     thumbnail: "/assets/Images/Works-pic/ALB_0755 copy.jpg",
     videoId: "example4"
   },
   {
-    id: "5",
+    id: 5,
     title: "Vineyard Wedding Cinematic Film",
     category: "Wedding Film",
     thumbnail: "/assets/Images/Works-pic/ALB_0842 copy.jpg",
     videoId: "example5"
   },
   {
-    id: "6",
+    id: 6,
     title: "Romantic Pre-Wedding Shoot",
     category: "Pre-Wedding",
     thumbnail: "/assets/Images/Works-pic/ALB_1041 copy.jpg",
@@ -65,12 +61,8 @@ const FeaturedWorkSection = () => {
     threshold: 0.1,
   });
   
-  const { content, loading } = useContent();
   const [api, setApi] = useState<any>(null);
   const [current, setCurrent] = useState(0);
-
-  // Use content from Firebase if available, otherwise use fallback data
-  const featuredWorks = content.featuredWorks?.length ? content.featuredWorks : fallbackFeaturedWorks;
 
   const container = {
     hidden: { opacity: 0 },
@@ -99,27 +91,6 @@ const FeaturedWorkSection = () => {
       api.off("select", handleSlideChange);
     };
   }, [api, handleSlideChange]);
-
-  if (loading) {
-    return (
-      <section className="section-padding bg-secondary py-20">
-        <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <Skeleton className="h-10 w-64 mx-auto mb-4" />
-            <Skeleton className="h-0.5 w-20 mx-auto mb-6" />
-            <Skeleton className="h-16 max-w-2xl mx-auto" />
-          </div>
-          <div className="px-4 md:px-8">
-            <Skeleton className="h-[400px] w-full max-w-4xl mx-auto rounded-md" />
-            <div className="mt-6 text-center max-w-2xl mx-auto">
-              <Skeleton className="h-6 w-32 mx-auto mb-2" />
-              <Skeleton className="h-8 w-64 mx-auto" />
-            </div>
-          </div>
-        </div>
-      </section>
-    );
-  }
 
   return (
     <section ref={ref} className="section-padding bg-secondary py-20">
@@ -152,7 +123,7 @@ const FeaturedWorkSection = () => {
             className="w-full"
           >
             <CarouselContent>
-              {featuredWorks.map((work: FeaturedWork) => (
+              {featuredWorks.map((work) => (
                 <CarouselItem key={work.id} className="basis-full">
                   <motion.div variants={item} className="group h-full">
                     <div className="relative aspect-video overflow-hidden rounded-md shadow-lg max-w-4xl mx-auto">
