@@ -10,6 +10,7 @@ import Services from "./pages/Services";
 import Pricing from "./pages/Pricing";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import Admin from "./pages/Admin";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,7 @@ const App = () => (
             <Route path="/services" element={<Services />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/admin" element={<Admin />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
