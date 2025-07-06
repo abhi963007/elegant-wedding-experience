@@ -256,9 +256,6 @@ const Admin = () => {
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
           <TabsList className="mb-8">
             <TabsTrigger value="featured-works">Featured Works</TabsTrigger>
-            <TabsTrigger value="testimonials">Testimonials</TabsTrigger>
-            <TabsTrigger value="hero">Hero Section</TabsTrigger>
-            <TabsTrigger value="about">About Section</TabsTrigger>
             <TabsTrigger value="wedding-video">Wedding Video</TabsTrigger>
           </TabsList>
           
@@ -362,22 +359,7 @@ const Admin = () => {
             </div>
           </TabsContent>
           
-          {/* Other tabs would be implemented similarly */}
-          <TabsContent value="testimonials">
-            <h2 className="text-2xl font-bold mb-4">Testimonials Management</h2>
-            <p>Testimonials management interface will be implemented here.</p>
-          </TabsContent>
-          
-          <TabsContent value="hero">
-            <h2 className="text-2xl font-bold mb-4">Hero Section Management</h2>
-            <p>Hero section management interface will be implemented here.</p>
-          </TabsContent>
-          
-          <TabsContent value="about">
-            <h2 className="text-2xl font-bold mb-4">About Section Management</h2>
-            <p>About section management interface will be implemented here.</p>
-          </TabsContent>
-          
+          {/* Wedding Video Tab */}
           <TabsContent value="wedding-video">
             <h2 className="text-2xl font-bold mb-4">Wedding Video Section Management</h2>
             <p>Wedding video section management interface will be implemented here.</p>
