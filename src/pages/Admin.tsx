@@ -244,6 +244,54 @@ const Admin = () => {
     }
   };
 
+  // Handle hero form submission
+  const handleHeroSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
+    setSuccessMessage(null);
+    
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    
+    try {
+      const title = formData.get('title') as string;
+      const subtitle = formData.get('subtitle') as string;
+      const description = formData.get('description') as string;
+      const ctaText = formData.get('ctaText') as string;
+      const ctaLink = formData.get('ctaLink') as string;
+      const videoFile = formData.get('videoFile') as File;
+      
+      let videoUrl = '';
+      
+      if (videoFile && videoFile.size > 0) {
+        videoUrl = await handleImageUpload(videoFile, 'hero');
+      }
+      
+      const heroData = {
+        title,
+        subtitle,
+        description,
+        ctaText,
+        ctaLink,
+        videoUrl,
+      };
+      
+      await updateDoc(doc(db, 'hero', 'current'), heroData);
+      setSuccessMessage('Hero section updated successfully!');
+      
+      // Reset form and refresh content
+      form.reset();
+      refreshContent();
+      
+    } catch (error) {
+      console.error('Error saving hero section:', error);
+      setError('Failed to save hero section. Please try again.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
   // Login form if not authenticated
   if (!user) {
     return (
@@ -551,12 +599,142 @@ const Admin = () => {
             </div>
           </TabsContent>
           
-          {/* Other tabs would be implemented similarly */}
+          {/* Hero Section Tab */}
           <TabsContent value="hero">
-            <h2 className="text-2xl font-bold mb-4">Hero Section Management</h2>
-            <p>Hero section management interface will be implemented here.</p>
+            <div className="grid gap-8">
+              <div className="flex justify-between items-center">
+                <h2 className="text-2xl font-bold">Hero Section</h2>
+              </div>
+              
+              {/* Display current hero content */}
+              {content.hero && (
+                <Card className="overflow-hidden">
+                  <div className="aspect-video relative">
+                    <video 
+                      src={content.hero.videoUrl} 
+                      className="w-full h-full object-cover"
+                      muted
+                      autoPlay={false}
+                      controls
+                    />
+                  </div>
+                  <CardHeader>
+                    <div className="flex justify-between items-start">
+                      <div>
+                        <CardTitle className="text-xl">{content.hero.title} | {content.hero.subtitle}</CardTitle>
+                        <p className="text-sm mt-2">{content.hero.description}</p>
+                        <div className="mt-4 flex items-center gap-2">
+                          <span className="text-sm font-medium">CTA:</span>
+                          <span className="bg-gold/20 text-gold px-3 py-1 rounded-full text-xs">
+                            {content.hero.ctaText} → {content.hero.ctaLink}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </CardHeader>
+                </Card>
+              )}
+              
+              {/* Edit hero form */}
+              <Card id="edit-hero-form" className="mt-8">
+                <CardHeader>
+                  <CardTitle>Edit Hero Section</CardTitle>
+                  <CardDescription>Update your website's hero section content</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <form onSubmit={handleHeroSubmit} className="space-y-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="title">Title</Label>
+                        <Input 
+                          id="title" 
+                          name="title" 
+                          defaultValue={content.hero?.title || "Capturing Moments"} 
+                          required 
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="subtitle">Subtitle</Label>
+                        <Input 
+                          id="subtitle" 
+                          name="subtitle" 
+                          defaultValue={content.hero?.subtitle || "Crafting Memories"} 
+                          required 
+                        />
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="description">Description</Label>
+                      <Textarea 
+                        id="description" 
+                        name="description" 
+                        rows={3} 
+                        defaultValue={content.hero?.description || "Premium wedding cinematography and video editing that transforms your special moments into cinematic masterpieces."} 
+                        required 
+                      />
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="ctaText">CTA Button Text</Label>
+                        <Input 
+                          id="ctaText" 
+                          name="ctaText" 
+                          defaultValue={content.hero?.ctaText || "Book a Consultation"} 
+                          required 
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="ctaLink">CTA Button Link</Label>
+                        <Input 
+                          id="ctaLink" 
+                          name="ctaLink" 
+                          defaultValue={content.hero?.ctaLink || "/contact"} 
+                          required 
+                        />
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="videoFile">Background Video (MP4)</Label>
+                      <Input 
+                        id="videoFile" 
+                        name="videoFile" 
+                        type="file" 
+                        accept="video/mp4" 
+                      />
+                      <p className="text-xs text-muted-foreground mt-1">Leave empty to keep current video</p>
+                    </div>
+                    
+                    {error && (
+                      <div className="text-red-500 text-sm flex items-center gap-2">
+                        <AlertCircle className="h-4 w-4" />
+                        {error}
+                      </div>
+                    )}
+                    
+                    {successMessage && (
+                      <div className="text-green-500 text-sm flex items-center gap-2">
+                        <CheckCircle className="h-4 w-4" />
+                        {successMessage}
+                      </div>
+                    )}
+                    
+                    <Button type="submit" disabled={loading}>
+                      {loading ? (
+                        <>
+                          <Loader2 className="mr-2 h-4 w-4 animate-spin" /> 
+                          Saving...
+                        </>
+                      ) : (
+                        'Update Hero Section'
+                      )}
+                    </Button>
+                  </form>
+                </CardContent>
+              </Card>
+            </div>
           </TabsContent>
           
+          {/* Other tabs would be implemented similarly */}
           <TabsContent value="about">
             <h2 className="text-2xl font-bold mb-4">About Section Management</h2>
             <p>About section management interface will be implemented here.</p>
