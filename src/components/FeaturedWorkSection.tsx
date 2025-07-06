@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 import { Play } from 'lucide-react';
 import {
   Carousel,
@@ -9,6 +8,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { useScrollAnimation, fadeInUp, staggerContainer } from '../hooks/use-scroll-animation';
 
 const featuredWorks = [
   {
@@ -56,27 +56,38 @@ const featuredWorks = [
 ];
 
 const FeaturedWorkSection = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-  
   const [api, setApi] = useState<any>(null);
   const [current, setCurrent] = useState(0);
-
-  const container = {
+  
+  const titleAnimation = useScrollAnimation(0.2);
+  const carouselAnimation = useScrollAnimation(0.3);
+  
+  const titleVariants = {
     hidden: { opacity: 0 },
-    show: {
+    visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1
+        staggerChildren: 0.2
       }
     }
   };
-
-  const item = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+  
+  const itemVariant = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+  
+  const carouselVariant = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" }
+    }
   };
 
   const handleSlideChange = React.useCallback(() => {
@@ -93,25 +104,29 @@ const FeaturedWorkSection = () => {
   }, [api, handleSlideChange]);
 
   return (
-    <section ref={ref} className="section-padding bg-secondary py-20">
+    <section className="section-padding bg-secondary py-20">
       <div className="container mx-auto">
         <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: inView ? 1 : 0 }}
-          transition={{ duration: 0.8 }}
+          ref={titleAnimation.ref}
+          variants={titleVariants}
+          initial="hidden"
+          animate={titleAnimation.controls}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-heading mb-4">Featured <span className="gold-gradient">Work</span></h2>
-          <div className="h-0.5 w-20 bg-gold mx-auto mb-6"></div>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <motion.h2 variants={itemVariant} className="text-3xl md:text-4xl font-heading mb-4">
+            Featured <span className="gold-gradient">Work</span>
+          </motion.h2>
+          <motion.div variants={itemVariant} className="h-0.5 w-20 bg-gold mx-auto mb-6"></motion.div>
+          <motion.p variants={itemVariant} className="text-muted-foreground max-w-2xl mx-auto">
             Explore our portfolio of cinematic wedding films and video editing projects that have captivated hearts and created lasting memories.
-          </p>
+          </motion.p>
         </motion.div>
 
         <motion.div 
-          variants={container}
+          ref={carouselAnimation.ref}
+          variants={carouselVariant}
           initial="hidden"
-          animate={inView ? "show" : "hidden"}
+          animate={carouselAnimation.controls}
           className="px-4 md:px-8"
         >
           <Carousel 
@@ -125,7 +140,7 @@ const FeaturedWorkSection = () => {
             <CarouselContent>
               {featuredWorks.map((work) => (
                 <CarouselItem key={work.id} className="basis-full">
-                  <motion.div variants={item} className="group h-full">
+                  <motion.div className="group h-full">
                     <div className="relative aspect-video overflow-hidden rounded-md shadow-lg max-w-4xl mx-auto">
                       <img 
                         src={work.thumbnail} 

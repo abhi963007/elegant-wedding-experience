@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import ReactPlayer from 'react-player';
+import { useScrollAnimation, fadeInUp, staggerContainer } from '../hooks/use-scroll-animation';
 
 const WeddingVideoSection = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [hasStarted, setHasStarted] = useState(false);
+  
+  const headerAnimation = useScrollAnimation(0.2);
+  const videoAnimation = useScrollAnimation(0.3);
+  const infoAnimation = useScrollAnimation(0.2);
 
   const handlePlay = () => {
     setIsPlaying(true);
@@ -21,28 +26,58 @@ const WeddingVideoSection = () => {
       setIsPlaying(true);
     }
   };
+  
+  const headerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+  
+  const itemVariant = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+  
+  const videoVariant = {
+    hidden: { opacity: 0, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.7, ease: "easeOut" }
+    }
+  };
 
   return (
     <section className="py-16 px-6 md:px-12 lg:px-24 bg-background">
       <div className="container mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+          ref={headerAnimation.ref}
+          variants={headerVariants}
+          initial="hidden"
+          animate={headerAnimation.controls}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-heading mb-6">Our Wedding Masterpiece</h2>
-          <p className="text-muted-foreground max-w-3xl mx-auto">
+          <motion.h2 variants={itemVariant} className="text-3xl font-heading mb-6">
+            Our Wedding Masterpiece
+          </motion.h2>
+          <motion.p variants={itemVariant} className="text-muted-foreground max-w-3xl mx-auto">
             Experience the emotion and beauty of a wedding day through our cinematic storytelling.
-          </p>
+          </motion.p>
         </motion.div>
         
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
+          ref={videoAnimation.ref}
+          variants={videoVariant}
+          initial="hidden"
+          animate={videoAnimation.controls}
           className="aspect-video rounded-md overflow-hidden shadow-xl relative group max-w-4xl mx-auto"
         >
           <div className="relative w-full h-full">
@@ -92,14 +127,14 @@ const WeddingVideoSection = () => {
         </motion.div>
         
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          viewport={{ once: true }}
+          ref={infoAnimation.ref}
+          variants={headerVariants}
+          initial="hidden"
+          animate={infoAnimation.controls}
           className="text-center mt-8"
         >
-          <p className="text-lg font-medium font-heading">Isabella & Thomas</p>
-          <p className="text-muted-foreground">A Beachside Wedding in Malibu</p>
+          <motion.p variants={itemVariant} className="text-lg font-medium font-heading">Isabella & Thomas</motion.p>
+          <motion.p variants={itemVariant} className="text-muted-foreground">A Beachside Wedding in Malibu</motion.p>
         </motion.div>
       </div>
     </section>
