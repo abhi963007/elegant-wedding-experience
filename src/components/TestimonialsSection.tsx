@@ -49,7 +49,7 @@ const TestimonialsSection = () => {
       <div className="absolute left-0 top-1/4 w-32 h-32 bg-gold opacity-5 rounded-full -translate-x-1/2"></div>
       <div className="absolute right-0 bottom-1/4 w-64 h-64 bg-gold opacity-5 rounded-full translate-x-1/2"></div>
       
-      <div className="container mx-auto">
+
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: inView ? 1 : 0 }}
@@ -112,7 +112,6 @@ const TestimonialsSection = () => {
             ))}
           </div>
         </motion.div>
-      </div>
     </section>
   );
 };

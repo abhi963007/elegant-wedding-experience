@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Play } from 'lucide-react';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const featuredWorks = [
   {
@@ -53,6 +60,9 @@ const FeaturedWorkSection = () => {
     triggerOnce: true,
     threshold: 0.1,
   });
+  
+  const [api, setApi] = useState<any>(null);
+  const [current, setCurrent] = useState(0);
 
   const container = {
     hidden: { opacity: 0 },
@@ -69,8 +79,21 @@ const FeaturedWorkSection = () => {
     show: { opacity: 1, y: 0, transition: { duration: 0.6 } }
   };
 
+  const handleSlideChange = React.useCallback(() => {
+    if (!api) return;
+    setCurrent(api.selectedScrollSnap());
+  }, [api]);
+
+  React.useEffect(() => {
+    if (!api) return;
+    api.on("select", handleSlideChange);
+    return () => {
+      api.off("select", handleSlideChange);
+    };
+  }, [api, handleSlideChange]);
+
   return (
-    <section ref={ref} className="section-padding bg-secondary">
+    <section ref={ref} className="section-padding bg-secondary py-20">
       <div className="container mx-auto">
         <motion.div 
           initial={{ opacity: 0 }}
@@ -89,30 +112,59 @@ const FeaturedWorkSection = () => {
           variants={container}
           initial="hidden"
           animate={inView ? "show" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+          className="px-4 md:px-8"
         >
-          {featuredWorks.map((work) => (
-            <motion.div key={work.id} variants={item} className="group">
-              <div className="relative aspect-video overflow-hidden rounded-sm">
-                <img 
-                  src={work.thumbnail} 
-                  alt={work.title} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <button className="w-16 h-16 rounded-full bg-gold/90 flex items-center justify-center transition-transform duration-300 transform group-hover:scale-110">
-                    <Play className="text-white h-6 w-6" />
-                  </button>
-                </div>
+          <Carousel 
+            opts={{
+              align: "center",
+              loop: true,
+            }}
+            setApi={setApi}
+            className="w-full"
+          >
+            <CarouselContent>
+              {featuredWorks.map((work) => (
+                <CarouselItem key={work.id} className="basis-full">
+                  <motion.div variants={item} className="group h-full">
+                    <div className="relative aspect-video overflow-hidden rounded-md shadow-lg max-w-4xl mx-auto">
+                      <img 
+                        src={work.thumbnail} 
+                        alt={work.title} 
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <button className="w-20 h-20 rounded-full bg-gold/90 flex items-center justify-center transition-transform duration-300 transform group-hover:scale-110">
+                          <Play className="text-white h-8 w-8" />
+                        </button>
+                      </div>
+                    </div>
+                    <div className="mt-6 text-center max-w-2xl mx-auto">
+                      <span className="text-sm text-gold uppercase tracking-wider font-medium">{work.category}</span>
+                      <h3 className="text-2xl font-medium mt-2">{work.title}</h3>
+                    </div>
+                  </motion.div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            
+            <div className="flex justify-center items-center gap-6 mt-10">
+              <CarouselPrevious className="relative static translate-y-0 hover:bg-gold hover:text-white transition-colors" />
+              <div className="flex gap-2">
+                {featuredWorks.map((_, index) => (
+                  <button
+                    key={index}
+                    className={`w-3 h-3 rounded-full transition-all ${
+                      current === index ? "bg-gold scale-125" : "bg-gray-300"
+                    }`}
+                    onClick={() => api?.scrollTo(index)}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
               </div>
-              <div className="mt-4">
-                <span className="text-xs text-gold uppercase tracking-wider">{work.category}</span>
-                <h3 className="text-lg font-medium mt-1">{work.title}</h3>
-              </div>
-            </motion.div>
-          ))}
+              <CarouselNext className="relative static translate-y-0 hover:bg-gold hover:text-white transition-colors" />
+            </div>
+          </Carousel>
         </motion.div>
-
       </div>
     </section>
   );
