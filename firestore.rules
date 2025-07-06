@@ -1,0 +1,28 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Allow public read access to all content collections
+    match /content/{document} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+    
+    // Allow public read access to featured works
+    match /featuredWorks/{document} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+    
+    // Allow public read access to testimonials
+    match /testimonials/{document} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+    
+    // Default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
